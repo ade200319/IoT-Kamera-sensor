@@ -24,18 +24,6 @@ PIR triggar → LED tänds → kameran tar bild → Raspberry Pi skickar bilden 
 - LAN / nätverk  
 - Dator eller server som kör Python  
 
-## Kopplingar
-PIR-sensor:  
-VCC → 5V  
-GND → GND  
-OUT → GPIO17  
-
-LED:  
-GPIO27 → motstånd (220–330 Ω) → LED → GND  
-
-Kamera:  
-Ansluts till CSI-kontakten på Raspberry Pi  
-
 ## Implementation – 3 enkla steg
 Steg 1: Webbserver  
 Webbservern kör FastAPI och har en endpoint `/upload`. När Raspberry Pi skickar en bild sparas den i mappen `uploads/`.
