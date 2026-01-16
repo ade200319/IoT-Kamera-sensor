@@ -22,7 +22,7 @@ PIR triggar → LED tänds → kameran tar bild → Raspberry Pi skickar bilden 
 - PIR rörelsesensor  
 - LED-lampa + motstånd  
 - LAN / nätverk  
-- Dator eller server som kör Python  
+- Python  
 
 ## Implementation – 3 enkla steg
 Steg 1: Webbserver  
@@ -32,13 +32,13 @@ Steg 2: Raspberry Pi – kamera
 Ett Python-program körs på Raspberry Pi som tar en bild med kameran och sparar den lokalt (t.ex. `photo.jpg`).
 
 Steg 3: Raspberry Pi – PIR-sensor  
-När PIR-sensorn känner av rörelse körs samma kod som i steg 2, men bilden skickas även till webbservern. Efter varje bild väntar systemet 10 sekunder för att undvika att ta för många bilder.
+När PIR-sensorn känner av rörelse körs samma kod som i steg 2, men bilden skickas även till webbservern. 
 
 ## Kommunikation
 Raspberry Pi skickar bilden till en bestämd adress på servern. Servern lyssnar på den adressen och när den får en bild sparar den filen i en mapp. HTTP som är regler för hur datorer pratar med varandra och POST sättet att skicka något på.
 
 ## Cooldown-regel
-Efter varje tagen och skickad bild väntar systemet 10 sekunder innan nästa bild kan tas.
+Efter varje tagen och skickad bild väntar systemet 5 sekunder innan nästa bild kan tas.
 
 ## Resultat
 Systemet tar automatiskt bilder vid rörelse och sparar dem på webbservern. Lösningen är enkel, stabil och lätt att bygga vidare på.
