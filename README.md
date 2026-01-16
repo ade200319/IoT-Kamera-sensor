@@ -35,8 +35,7 @@ Steg 3: Raspberry Pi – PIR-sensor
 När PIR-sensorn känner av rörelse körs samma kod som i steg 2, men bilden skickas även till webbservern. Efter varje bild väntar systemet 10 sekunder för att undvika att ta för många bilder.
 
 ## Kommunikation
-Bilden skickas från Raspberry Pi till webbservern via HTTP POST:
-http://SERVER-IP:8000/upload
+Raspberry Pi skickar bilden till en bestämd adress på servern. Servern lyssnar på den adressen och när den får en bild sparar den filen i en mapp. HTTP som är regler för hur datorer pratar med varandra och POST sättet att skicka något på.
 
 ## Cooldown-regel
 Efter varje tagen och skickad bild väntar systemet 10 sekunder innan nästa bild kan tas.
